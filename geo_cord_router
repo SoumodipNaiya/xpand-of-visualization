@@ -228,7 +228,7 @@ router.post('/chart', (req, res) => {
         debug(req.body);
 
         // If it's a test process, use random data
-        if (process.env.TEST) {
+    if (process.env.TEST) {
             let data = {
                 type: circular_chart_type[Math.floor(Math.random() * circular_chart_type.length)],
                 label: [],
@@ -469,7 +469,7 @@ router.get('/init/choropleth',verifyToken, (req, res) => {
             error: "ERROR: No matching data found"
         });
         var val = [{}];
-        if (process.env.TEST) {
+        //if (process.env.TEST) {
             for (var i = 1; i < 400; ++i) {
                 val[i.toString()] = {
                     'Economy': {
@@ -494,7 +494,7 @@ router.get('/init/choropleth',verifyToken, (req, res) => {
                 }
             }
             return res.status(200).send(val);
-        }
+       // }
         result.forEach((ward) => {
             val[ward.ward_id] = {};
             layer_map.forEach((t) => {
