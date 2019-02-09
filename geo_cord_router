@@ -468,7 +468,7 @@ router.get('/init/choropleth',verifyToken, (req, res) => {
             success: false,
             error: "ERROR: No matching data found"
         });
-        var val = [{}];
+        var val = {};
         //if (process.env.TEST) {
             for (var i = 1; i < 400; ++i) {
                 val[i.toString()] = {
